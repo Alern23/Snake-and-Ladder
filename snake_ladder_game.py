@@ -22,7 +22,7 @@ def ladder(data):
 
 def snake(data):
     if (data in snakeAddress.keys()):
-        print("\033[1m" + "නයෙක් හිටියා 🐍" + "\033[0m")
+        print("\033[1m" + "නයෙක් කැවෝ 🐍" + "\033[0m")
         return snakeAddress[data]
     else:
         return data
@@ -31,10 +31,21 @@ def snake(data):
 def game_end(data):
     return (data >= 100)
 
-
-def game_play():
+def game_start():
     player_name = "\033[1m" + "Mindula" + "\033[0m"
-    score = 0
+    while (True):
+        random_data = random.randint(1, 6)
+        print("දාදු කැටේ අගය :", random_data)
+        if (random_data == 1 or random_data == 6):
+            game_process(player_name, random_data)
+        else:
+            print("\033[1m" + "නැවත උත්සාහ කරන්න.." + "\033[0m")
+        time.sleep(1)
+
+def game_process(player_name_data, score_data):
+
+    player_name = player_name_data
+    score = score_data
 
     while (True):
 
@@ -43,18 +54,13 @@ def game_play():
         time.sleep(1)
         random_data = random.randint(1, 6)
         print("දාදු කැටේ අගය :", random_data)
+
         score += random_data
         score = ladder(score)
         score = snake(score)
-
-        if score > 100:
-            score = 100
-
-        print(player_name, "ඔයාගේ ලකුණු :", score)
 
         if (game_end(score)):
             print(player_name, "ඔයා තරගය දිනුම්... සුභ පැතුම් !")
             exit()
 
-
-game_play()
+game_start()
