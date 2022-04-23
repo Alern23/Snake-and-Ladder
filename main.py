@@ -2,12 +2,9 @@
 # mindula dilthushan
 # minduladilthushan1@gmail.com
 # 22-04-09
-
-def print_hi(game):
-    print(f'Welcome, {game}')
+from snake_ladder_game import game_play
 
 if __name__ == '__main__':
-    print_hi('Snake and Ladder Game !')
-
+    game_play()
 
 
