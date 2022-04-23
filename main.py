@@ -2,14 +2,6 @@
 # mindula dilthushan
 # minduladilthushan1@gmail.com
 # 22-04-09
-from random import random
-
-class Lottery:
-
-    @staticmethod
-    def getLottery():
-        return random.randint(1, 6)
-
 
 def print_hi(game):
     print(f'Welcome, {game}')
