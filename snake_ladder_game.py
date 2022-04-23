@@ -36,11 +36,9 @@ def game_play():
     player_name = "\033[1m" + "Mindula" + "\033[0m"
     score = 0
 
-    while (1):
+    while (True):
 
-        if (1 == 0):
-            print(player_name, "ඔයාගේ දැන් ලකුණු :", score)
-            break
+        print(player_name, "ඔයාගේ දැන් ලකුණු :", score)
 
         time.sleep(1)
         random_data = random.randint(1, 6)
